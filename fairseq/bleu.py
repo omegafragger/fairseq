@@ -98,7 +98,7 @@ class Scorer(object):
             ctypes.c_int(self.eos))
 
     def score(self, order=4):
-        psum = sum(math.log(p) if p > 0 else float('-Inf')
+        psum = sum(math.log(p) if p > 0 else 0.0
                    for p in self.precision()[:order])
         return self.brevity() * math.exp(psum / order) * 100
 
