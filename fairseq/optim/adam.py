@@ -39,9 +39,9 @@ class FairseqAdam(FairseqOptimizer):
     def add_args(parser):
         """Add optimizer-specific arguments to the parser."""
         # fmt: off
-        parser.add_argument('--adam-betas', default='(0.9, 0.999)', metavar='B',
+        parser.add_argument('--adam-betas', default='(0.9, 0.98)', metavar='B',
                             help='betas for Adam optimizer')
-        parser.add_argument('--adam-eps', type=float, default=1e-8, metavar='D',
+        parser.add_argument('--adam-eps', type=float, default=1e-9, metavar='D',
                             help='epsilon for Adam optimizer')
         parser.add_argument('--weight-decay', '--wd', default=0.0, type=float, metavar='WD',
                             help='weight decay')
