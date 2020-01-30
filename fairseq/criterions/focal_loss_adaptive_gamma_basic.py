@@ -50,7 +50,7 @@ class FocalLossAdaptive(nn.Module):
                 if pt_sample < key:
                     gamma_list.append(gamma_dic[key])
                     break
-        return torch.tensor(gamma_list).to(self.device)
+        return torch.tensor(gamma_list).cuda()
 
     def forward(self, input, target):
         if input.dim()>2:
